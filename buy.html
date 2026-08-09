@@ -1,0 +1,343 @@
+<!-- /buy.html — FULL COPY-PASTE REPLACEMENT (FIXED VALIDATION) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request to Buy — NO ADDITIVES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- EMAILJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    :root { --bg:#faf9f6; --ink:#1a1a1a; --muted:#6b6b6b; --accent:#2d5a27; --accent-hover:#1e3d1a; --line:#e5e0d8; --card:#fff; --error:#c0392b; --success:#27ae60; --radius:12px; --shadow:0 10px 30px -15px rgba(0,0,0,.08); }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .container{max-width:720px;margin:0 auto;padding:40px 20px}
+    .buy-header{text-align:center;margin-bottom:48px}
+    .buy-eyebrow{font-family:'Fraunces',serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:8px;display:block}
+    .buy-title{font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:500;line-height:1.2;color:var(--ink);margin-bottom:16px}
+    .buy-subtitle{font-size:1.1rem;color:var(--muted);max-width:500px;margin:0 auto}
+    .form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+    .form-section{margin-bottom:32px}
+    .form-section:last-of-type{margin-bottom:0}
+    .section-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+    .field{margin-bottom:20px}
+    .field-label{display:block;font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:8px}
+    .required{color:var(--error);margin-left:2px}
+    .input-wrap{position:relative}
+    .form-input,.form-select,.form-textarea{width:100%;padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--ink);background:#fdfdfd;border:1px solid var(--line);border-radius:8px;transition:border-color .2s,box-shadow .2s}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(45,90,39,.15)}
+    .form-input::placeholder{color:#bbb}
+    .form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='1.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:20px;padding-right:48px}
+    .form-textarea{min-height:120px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:600px){.row{grid-template-columns:1fr}}
+    .qty-stepper{display:flex;align-items:center;gap:12px;max-width:200px}
+    .qty-btn{width:44px;height:44px;border:1px solid var(--line);background:var(--card);border-radius:8px;font-size:1.25rem;color:var(--ink);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+    .qty-btn:hover:not(:disabled){background:var(--accent);border-color:var(--accent);color:#fff}
+    .qty-btn:disabled{opacity:.4;cursor:not-allowed}
+    .qty-input{width:70px;height:44px;text-align:center;font-size:1.1rem;font-weight:600;border:1px solid var(--line);border-radius:8px;background:#fdfdfd;-moz-appearance:textfield}
+    .qty-input::-webkit-outer-spin-button,.qty-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+    .qty-help{font-size:.8rem;color:var(--muted);margin-top:8px;display:block}
+    .custom-qty{margin-top:16px;display:none}
+    .custom-qty.visible{display:block;animation:fadeIn .3s}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+    .form-actions{margin-top:40px;text-align:center}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 48px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;color:#fff;background:var(--accent);border:none;border-radius:8px;cursor:pointer;transition:background .2s,transform .1s;min-width:280px}
+    .btn-primary:hover{background:var(--accent-hover)}
+    .btn-primary:active{transform:scale(.98)}
+    .btn-primary:disabled{opacity:.7;cursor:not-allowed}
+    .btn-loader{display:none;width:20px;height:20px;border:2px solid transparent;border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+    .btn-primary.loading .btn-text{display:none}
+    .btn-primary.loading .btn-loader{display:block}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .form-note{font-size:.85rem;color:var(--muted);margin-top:16px}
+    .status{display:none;text-align:center;padding:40px 20px}
+    .status.visible{display:block;animation:fadeIn .4s}
+    .status-icon{width:64px;height:64px;margin:0 auto 24px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .status-icon.success{background:rgba(39,174,96,.15);color:var(--success)}
+    .status-icon.error{background:rgba(192,57,43,.15);color:var(--error)}
+    .status-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;margin-bottom:12px}
+    .status-text{color:var(--muted);margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto}
+    .status-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:8px;cursor:pointer;transition:all .2s;text-decoration:none}
+    .btn-secondary:hover{background:var(--accent);color:#fff}
+    .site-footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);margin-top:60px}
+    .footer-email{color:var(--accent);text-decoration:none;font-weight:500}
+    .footer-email:hover{text-decoration:underline}
+    .dev-hint{background:#fff3cd;border:1px solid #ffc107;color:#856404;padding:12px 16px;border-radius:8px;margin-bottom:24px;font-size:.85rem;text-align:center;display:none}
+    .dev-hint.visible{display:block}
+  </style>
+</head>
+<body>
+
+  <nav style="display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:100">
+    <a href="index.html" style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:500;color:var(--ink);text-decoration:none">NO ADDITIVES <span style="font-size:.7em;vertical-align:super">N/A</span></a>
+    <div style="display:flex;gap:24px;align-items:center">
+      <a href="index.html" style="color:var(--muted);text-decoration:none;font-size:.9rem">Home</a>
+      <a href="index.html#products" style="color:var(--muted);text-decoration:none;font-size:.9rem">Products</a>
+      <a href="buy.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--accent);color:#fff;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none">Request to Buy</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="dev-hint" id="devHint">
+        <strong>⚠️ Developer Mode:</strong> EmailJS requires a local server (<code>http://127.0.0.1:5500</code>).<br>
+        Right-click <code>buy.html</code> → <strong>"Open with Live Server"</strong> in VS Code.<br>
+        Or run: <code>python -m http.server 5500</code> / <code>npx serve . -l 5500</code>.
+      </div>
+
+      <header class="buy-header">
+        <span class="buy-eyebrow">Purchase Request</span>
+        <h1 class="buy-title">Request your jar</h1>
+        <p class="buy-subtitle">Tell us what you'd like. We'll reach out with availability, pricing, and next steps. No payment required now.</p>
+      </header>
+
+      <div class="form-card" id="formCard">
+        <form id="buyForm" method="POST" novalidate>
+          <fieldset class="form-section">
+            <legend class="section-title">Product</legend>
+            <div class="field">
+              <label class="field-label" for="product">Select Product <span class="required" aria-hidden="true">*</span></label>
+              <div class="input-wrap">
+                <select id="product" name="product" class="form-select" required>
+                  <option value="">Choose a product</option>
+                  <option value="regular">Regular Peanut Butter — Simple. Creamy. Naturally sweetened.</option>
+                  <option value="supernut">Supernut Butter — More nuts. More texture. More character.</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend class="section-title">Quantity</legend>
+            <div class="field">
+              <label class="field-label">Select Quantity <span class="required" aria-hidden="true">*</span></label>
+              <div class="qty-stepper" role="group" aria-label="Quantity selection">
+                <button type="button" class="qty-btn" id="qtyDec" aria-label="Decrease quantity">−</button>
+                <input type="number" id="quantity" name="quantity" class="qty-input" value="1" min="1" max="5" required aria-required="true">
+                <button type="button" class="qty-btn" id="qtyInc" aria-label="Increase quantity">+</button>
+              </div>
+              <span class="qty-help">Select 1–5 jars, or choose Custom for larger requests.</span>
+              <div class="field custom-qty" id="customQtyField">
+                <label class="field-label" for="customQuantity">Custom Quantity <span class="required" aria-hidden="true">*</span></label>
+                <div class="input-wrap"><input type="number" id="customQuantity" name="customQuantity" class="form-input" min="6" max="500" placeholder="Enter quantity (6–500)"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend class="section-title">Your Information</legend>
+            <div class="row">
+              <div class="field"><label class="field-label" for="fullName">Full Name <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="text" id="fullName" name="fullName" class="form-input" required minlength="2" autocomplete="name" placeholder="John Doe"></div></div>
+              <div class="field"><label class="field-label" for="email">Email <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="john@example.com"></div></div>
+            </div>
+            <div class="field"><label class="field-label" for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="tel" id="phone" name="phone" class="form-input" required minlength="10" autocomplete="tel" placeholder="+1 (555) 000-0000"></div></div>
+            <div class="field"><label class="field-label" for="address">Delivery Address <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="text" id="address" name="address" class="form-input" required minlength="5" autocomplete="street-address" placeholder="Street address, apartment, suite"></div></div>
+            <div class="row">
+              <div class="field"><label class="field-label" for="city">City <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="text" id="city" name="city" class="form-input" required minlength="2" autocomplete="address-level2" placeholder="City"></div></div>
+              <div class="field"><label class="field-label" for="state">State/Province <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="text" id="state" name="state" class="form-input" required minlength="2" autocomplete="address-level1" placeholder="State / Province"></div></div>
+              <div class="field"><label class="field-label" for="postalCode">Postal Code <span class="required" aria-hidden="true">*</span></label><div class="input-wrap"><input type="text" id="postalCode" name="postalCode" class="form-input" required minlength="3" autocomplete="postal-code" placeholder="Postal Code"></div></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend class="section-title">Additional Details</legend>
+            <div class="field"><label class="field-label" for="message">Optional Message</label><div class="input-wrap"><textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Any specific questions, delivery instructions, or preferences..."></textarea></div></div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="submitBtn"><span class="btn-text">Submit Request</span><span class="btn-loader" aria-hidden="true"></span></button>
+            <p class="form-note">No payment required. We'll contact you with pricing and availability.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="status" id="successState" role="status" aria-live="polite"><div class="status-icon success" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div><h2 class="status-title">Request received.</h2><p class="status-text">Thank you for choosing No Additives. Your request has been received and our team will get back to you with availability and next steps.</p><div class="status-actions"><a href="index.html" class="btn-secondary">Back to No Additives</a><a href="buy.html" class="btn-secondary">Submit Another Request</a></div></div>
+
+      <div class="status" id="errorState" role="alert" aria-live="assertive"><div class="status-icon error" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div><h2 class="status-title">Unable to Submit</h2><p class="status-text" id="errorText">Something went wrong. Please try again or email us directly.</p><div class="status-actions"><button type="button" class="btn-secondary" id="retryBtn">Try Again</button><a href="mailto:infonoadditives@gmail.com" class="btn-secondary">Email Us Directly</a></div></div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="yr"></span> NO ADDITIVES. All rights reserved.</p><p><a href="mailto:infonoadditives@gmail.com" class="footer-email">infonoadditives@gmail.com</a></p></footer>
+
+  <script>
+    // ============================================================
+    // CONFIG
+    // ============================================================
+    const EMAILJS_CONFIG = {
+      publicKey: 'g7Fk5biWZJax78742',
+      serviceId: 'service_mj0mnkq',
+      templateId: 'template_ws9o13s',
+      templateMap: {
+        name: 'name',
+        email: 'email',
+        phone: 'phone',
+        product: 'product',
+        quantity: 'quantity',
+        address: 'address',
+        city: 'city',
+        state: 'state',
+        postalCode: 'postal_code',
+        message: 'message'
+      }
+    };
+
+    // ============================================================
+    // EMAILJS INIT
+    // ============================================================
+    let emailjsReady = false;
+    try {
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+        emailjsReady = true;
+        console.log('[EmailJS] ✅ Initialized');
+      } else {
+        console.warn('[EmailJS] ⚠️ SDK not loaded — are you on file:// ? Use Live Server.');
+      }
+    } catch (e) { console.error('[EmailJS] ❌ Init failed:', e); }
+
+    // ============================================================
+    // UI SETUP
+    // ============================================================
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('buyForm');
+    const formCard = document.getElementById('formCard');
+    const successState = document.getElementById('successState');
+    const errorState = document.getElementById('errorState');
+    const errorText = document.getElementById('errorText');
+    const retryBtn = document.getElementById('retryBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const qtyInput = document.getElementById('quantity');
+    const customQtyField = document.getElementById('customQtyField');
+    const customQtyInput = document.getElementById('customQuantity');
+    const qtyDec = document.getElementById('qtyDec');
+    const qtyInc = document.getElementById('qtyInc');
+    const devHint = document.getElementById('devHint');
+
+    if (location.protocol === 'file:' || !emailjsReady) devHint.classList.add('visible');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const pre = urlParams.get('product');
+    if (pre) document.getElementById('product').value = pre;
+
+    // Quantity stepper logic
+    function updQtyBtns() { const v = parseInt(qtyInput.value,10)||1; qtyDec.disabled=v<=1; qtyInc.disabled=v>=5; }
+    qtyDec.addEventListener('click',()=>{const v=parseInt(qtyInput.value,10)||1;if(v>1){qtyInput.value=v-1;updQtyBtns();toggleCustom();}});
+    qtyInc.addEventListener('click',()=>{const v=parseInt(qtyInput.value,10)||1;if(v<5){qtyInput.value=v+1;updQtyBtns();toggleCustom();}});
+    qtyInput.addEventListener('change',()=>{qtyInput.value=Math.max(1,Math.min(5,parseInt(qtyInput.value,10)||1));updQtyBtns();toggleCustom();});
+    qtyInput.addEventListener('input',toggleCustom);
+    
+    // Initialize button state on load
+    updQtyBtns(); 
+    toggleCustom();
+
+    function toggleCustom(){
+      const v = parseInt(qtyInput.value,10)||1;
+      if(v > 5){
+        customQtyField.classList.add('visible');
+        customQtyInput.required = true;
+      } else {
+        customQtyField.classList.remove('visible');
+        customQtyInput.required = false;
+        customQtyInput.value = ''; // Clear value when hidden
+      }
+    }
+
+    // ============================================================
+    // SUBMIT HANDLER
+    // ============================================================
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      console.log('🚀 Submit handler fired');
+
+      // Browser validation
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      // --- FIX STARTS HERE ---
+      // Check if custom field is VISIBLE (has .visible class), not .hidden property
+      const isCustomVisible = customQtyField.classList.contains('visible');
+      
+      if (isCustomVisible) {
+        const customVal = parseInt(customQtyInput.value, 10) || 0;
+        if (customVal < 6) {
+          customQtyInput.setCustomValidity('Minimum 6 for custom quantity');
+          form.reportValidity(); 
+          return;
+        }
+      }
+      customQtyInput.setCustomValidity('');
+      // --- FIX ENDS HERE ---
+
+      if (!emailjsReady) {
+        console.error('🚫 EmailJS not initialized');
+        formCard.hidden = true; successState.hidden = true;
+        errorText.textContent = 'Email service unavailable. Please run on Local Server (http://127.0.0.1:5500) or email us directly.';
+        errorState.classList.add('visible');
+        return;
+      }
+
+      submitBtn.disabled = true; submitBtn.classList.add('loading');
+
+      const fd = new FormData(form);
+      const productKey = fd.get('product');
+      const productName = productKey === 'regular' ? 'Regular Peanut Butter' : 'Supernut Butter';
+      const finalQty = isCustomVisible ? fd.get('customQuantity') : fd.get('quantity');
+
+      const data = {
+        name: fd.get('fullName'),
+        email: fd.get('email'),
+        phone: fd.get('phone'),
+        product: productName,
+        quantity: finalQty,
+        address: fd.get('address'),
+        city: fd.get('city'),
+        state: fd.get('state'),
+        postal_code: fd.get('postalCode'),
+        message: fd.get('message') || 'No additional message'
+      };
+
+      const templateParams = {};
+      for (const [jsKey, tplKey] of Object.entries(EMAILJS_CONFIG.templateMap)) {
+        templateParams[tplKey] = data[jsKey] ?? '';
+      }
+
+      console.log('📦 templateParams being sent:', templateParams);
+
+      try {
+        const res = await emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          templateParams
+        );
+        console.log('[EmailJS] ✅ RESPONSE:', res.status, res.text, res);
+
+        if (res.status === 200) {
+          alert('✅ EmailJS returned 200 OK.\n\nIf you don\'t see the email in 1–2 min:\n1. Check Spam / Promotions.\n2. Open EmailJS Dashboard → Logs → confirm "Sent".\n3. In Template settings, ensure "To Email" = YOUR email (not {{email}}).');
+          formCard.hidden = true; errorState.hidden = true; successState.classList.add('visible');
+        } else {
+          throw new Error('EmailJS Error: ' + res.text);
+        }
+      } catch (err) {
+        console.error('[EmailJS] ❌ FULL ERROR:', err);
+        formCard.hidden = true; successState.hidden = true;
+        errorText.textContent = err.text || err.message || 'Network error. Check connection.';
+        errorState.classList.add('visible');
+        submitBtn.disabled = false; submitBtn.classList.remove('loading');
+      }
+    });
+
+    retryBtn.addEventListener('click', () => {
+      errorState.classList.remove('visible');
+      formCard.hidden = false;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+    });
+  </script>
+</body>
+</html>
