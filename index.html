@@ -1,0 +1,586 @@
+<!-- /index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NO ADDITIVES - Premium peanut butter made without palm oil, refined sugar, or unnecessary additives. Naturally sweetened with dates.">
+    <title>NO ADDITIVES (N/A) — Nothing unnecessary. Everything delicious.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo" aria-label="NO ADDITIVES Home">
+                <span class="nav__logo-main">NO ADDITIVES</span>
+                <span class="nav__logo-sub">N/A</span>
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="#philosophy" class="nav__link">Philosophy</a>
+                <a href="#products" class="nav__link">Products</a>
+                <a href="#faq" class="nav__link">FAQ</a>
+                <a href="terms.html" class="nav__link">Terms</a>
+                <a href="privacy.html" class="nav__link">Privacy</a>
+                <a href="buy.html" class="nav__link nav__link--cta magnetic-btn">Request to Buy</a>
+            </div>
+            <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero__background">
+            <div class="hero__gradient"></div>
+        </div>
+        <div class="hero__container">
+            <div class="hero__content">
+                <p class="hero__eyebrow">A simpler philosophy</p>
+                <h1 class="hero__title">
+                    <span class="hero__title-line">Nothing unnecessary.</span>
+                    <span class="hero__title-line">Everything delicious.</span>
+                </h1>
+                <p class="hero__subtitle">Peanut butter made with intention — palm-oil free, refined-sugar free, and naturally sweetened with dates.</p>
+                <div class="hero__actions">
+                    <a href="#products" class="btn btn--primary magnetic-btn">Explore the Butters</a>
+                    <a href="#philosophy" class="btn btn--secondary magnetic-btn">Our Philosophy</a>
+                </div>
+            </div>
+            <div class="hero__product" aria-hidden="true">
+                <div class="hero__jar-wrapper">
+                    <img src="assets/regular-peanut-butter.svg" alt="Regular Peanut Butter jar" class="hero__jar" loading="eager">
+                    <div class="hero__jar-shadow"></div>
+                </div>
+                <div class="hero__ingredients" aria-hidden="true">
+                    <img src="assets/peanuts.svg" alt="" class="hero__ingredient hero__ingredient--peanut" loading="lazy">
+                    <img src="assets/dates.svg" alt="" class="hero__ingredient hero__ingredient--date" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+            <span class="hero__scroll-text">Scroll</span>
+            <svg class="hero__scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy" aria-labelledby="philosophyTitle">
+        <div class="container">
+            <header class="section-header">
+                <p class="section__eyebrow">Our Philosophy</p>
+                <h2 id="philosophyTitle" class="section__title">Peanut butter, without the unnecessary.</h2>
+            </header>
+            <div class="philosophy__grid">
+                <article class="philosophy__card">
+                    <div class="philosophy__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3 class="philosophy__title">Simple Ingredients</h3>
+                    <p class="philosophy__text">Peanuts. Dates. Salt. That's the foundation. No palm oil, no refined sugar, no emulsifiers, no stabilizers, no artificial flavors.</p>
+                </article>
+                <article class="philosophy__card">
+                    <div class="philosophy__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="philosophy__title">Naturally Sweetened</h3>
+                    <p class="philosophy__text">Dates provide a gentle, caramel-like sweetness with fiber and nutrients intact. No refined sugar. No artificial sweeteners. Just fruit.</p>
+                </article>
+                <article class="philosophy__card">
+                    <div class="philosophy__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v12M6 12h12"/></svg>
+                    </div>
+                    <h3 class="philosophy__title">Palm-Oil Free</h3>
+                    <p class="philosophy__text">We refuse palm oil. Our texture comes from properly roasted peanuts and patient grinding — not from inexpensive tropical oils.</p>
+                </article>
+                <article class="philosophy__card">
+                    <div class="philosophy__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v8M8 12h8"/></svg>
+                    </div>
+                    <h3 class="philosophy__title">Honest Process</h3>
+                    <p class="philosophy__text">Small-batch roasting. Stone grinding. No shortcuts. The jar tells you exactly what's inside — nothing hidden behind marketing terms.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredient Philosophy -->
+    <section class="ingredients" id="ingredients" aria-labelledby="ingredientsTitle">
+        <div class="container">
+            <div class="ingredients__layout">
+                <div class="ingredients__visual" aria-hidden="true">
+                    <div class="ingredients__jar-stage">
+                        <img src="assets/regular-peanut-butter.svg" alt="" class="ingredients__jar" loading="lazy">
+                        <div class="ingredients__jar-shadow"></div>
+                        <div class="ingredients__floating" aria-hidden="true">
+                            <img src="assets/peanut.svg" alt="" class="ingredients__float ingredients__float--1" loading="lazy">
+                            <img src="assets/peanut.svg" alt="" class="ingredients__float ingredients__float--2" loading="lazy">
+                            <img src="assets/date.svg" alt="" class="ingredients__float ingredients__float--3" loading="lazy">
+                            <img src="assets/peanut.svg" alt="" class="ingredients__float ingredients__float--4" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="ingredients__content">
+                    <header class="section-header">
+                        <p class="section__eyebrow">What's Inside</p>
+                        <h2 id="ingredientsTitle" class="section__title">Ingredients you can pronounce.</h2>
+                    </header>
+                    <div class="ingredients__list">
+                        <div class="ingredient-item">
+                            <div class="ingredient-item__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
+                            </div>
+                            <div class="ingredient-item__info">
+                                <h3 class="ingredient-item__name">Dry-Roasted Peanuts</h3>
+                                <p class="ingredient-item__desc">Slow-roasted to develop deep, natural flavor without added oils.</p>
+                            </div>
+                        </div>
+                        <div class="ingredient-item">
+                            <div class="ingredient-item__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div class="ingredient-item__info">
+                                <h3 class="ingredient-item__name">Medjool Dates</h3>
+                                <p class="ingredient-item__desc">Whole dates blended in for natural sweetness, fiber, and caramel notes.</p>
+                            </div>
+                        </div>
+                        <div class="ingredient-item">
+                            <div class="ingredient-item__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div class="ingredient-item__info">
+                                <h3 class="ingredient-item__name">Sea Salt</h3>
+                                <p class="ingredient-item__desc">A pinch to enhance the natural nuttiness and balance the dates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="ingredients__note">* Supernut Butter includes additional nuts and seeds. Full ingredient lists available on product pages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="products" id="products" aria-labelledby="productsTitle">
+        <div class="container">
+            <header class="section-header section-header--center">
+                <p class="section__eyebrow">Our Butters</p>
+                <h2 id="productsTitle" class="section__title">Two expressions. One philosophy.</h2>
+            </header>
+            <div class="products__grid">
+                <!-- Regular Peanut Butter -->
+                <article class="product-card" data-product="regular">
+                    <div class="product-card__visual">
+                        <img src="assets/regular-peanut-butter.svg" alt="Regular Peanut Butter jar" class="product-card__image" loading="lazy">
+                        <div class="product-card__shadow"></div>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__name">Regular Peanut Butter</h3>
+                        <p class="product-card__tagline">Simple. Creamy. Naturally sweetened.</p>
+                        <ul class="product-card__features" aria-label="Key characteristics">
+                            <li>Palm-oil free</li>
+                            <li>No refined sugar</li>
+                            <li>Date-sweetened</li>
+                            <li>Peanut-based</li>
+                            <li>Creamy texture</li>
+                        </ul>
+                        <div class="product-card__actions">
+                            <button class="btn btn--outline product-card__explore magnetic-btn" data-product="regular">Explore</button>
+                            <a href="buy.html?product=regular" class="btn btn--primary product-card__buy magnetic-btn">Request to Buy</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Supernut Butter -->
+                <article class="product-card" data-product="supernut">
+                    <div class="product-card__visual">
+                        <img src="assets/supernut-butter.svg" alt="Supernut Butter jar" class="product-card__image" loading="lazy">
+                        <div class="product-card__shadow"></div>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__name">Supernut Butter</h3>
+                        <p class="product-card__tagline">More nuts. More texture. More character.</p>
+                        <ul class="product-card__features" aria-label="Key characteristics">
+                            <li>Palm-oil free</li>
+                            <li>No refined sugar</li>
+                            <li>Date-sweetened</li>
+                            <li>Nut-rich blend</li>
+                            <li>Creamy & textured</li>
+                        </ul>
+                        <div class="product-card__actions">
+                            <button class="btn btn--outline product-card__explore magnetic-btn" data-product="supernut">Explore</button>
+                            <a href="buy.html?product=supernut" class="btn btn--primary product-card__buy magnetic-btn">Request to Buy</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cinematic Product Experience -->
+    <section class="experience" id="experience" aria-labelledby="experienceTitle">
+        <div class="experience__container">
+            <div class="experience__text-column">
+                <div class="experience__text-wrapper">
+                    <header class="section-header">
+                        <p class="section__eyebrow">The Experience</p>
+                        <h2 id="experienceTitle" class="section__title">Open a jar. Taste the difference.</h2>
+                    </header>
+                    <div class="experience__steps" id="experienceSteps">
+                        <article class="experience__step" data-step="1">
+                            <span class="experience__step-number">01</span>
+                            <div class="experience__step-content">
+                                <h3 class="experience__step-title">The Seal</h3>
+                                <p class="experience__step-text">Freshness locked in. No tamper-evident plastic rings — just a clean metal lid you trust.</p>
+                            </div>
+                        </article>
+                        <article class="experience__step" data-step="2">
+                            <span class="experience__step-number">02</span>
+                            <div class="experience__step-content">
+                                <h3 class="experience__step-title">The Reveal</h3>
+                                <p class="experience__step-text">Lift the lid. No oil separation anxiety. Just rich, consistent texture waiting for your spoon.</p>
+                            </div>
+                        </article>
+                        <article class="experience__step" data-step="3">
+                            <span class="experience__step-number">03</span>
+                            <div class="experience__step-content">
+                                <h3 class="experience__step-title">The Taste</h3>
+                                <p class="experience__step-text">Roasted peanut depth. Date caramel warmth. Salt balance. Nothing fights for attention.</p>
+                            </div>
+                        </article>
+                        <article class="experience__step" data-step="4">
+                            <span class="experience__step-number">04</span>
+                            <div class="experience__step-content">
+                                <h3 class="experience__step-title">The Versatility</h3>
+                                <p class="experience__step-text">Toast. Smoothies. Straight from the jar. Cooking. Baking. It earns its place in your kitchen.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="experience__visual-column">
+                <div class="experience__jar-stage" id="experienceJarStage">
+                    <div class="experience__jar-wrapper">
+                        <div class="experience__lid" id="experienceLid" aria-hidden="true">
+                            <div class="experience__lid-top"></div>
+                            <div class="experience__lid-side"></div>
+                        </div>
+                        <div class="experience__jar" id="experienceJar">
+                            <div class="experience__jar-fill" id="experienceJarFill"></div>
+                            <div class="experience__jar-label"></div>
+                        </div>
+                        <div class="experience__jar-shadow"></div>
+                    </div>
+                    <div class="experience__particles" id="experienceParticles" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why No Additives -->
+    <section class="why" id="why" aria-labelledby="whyTitle">
+        <div class="container">
+            <header class="section-header section-header--center">
+                <p class="section__eyebrow">Why N/A</p>
+                <h2 id="whyTitle" class="section__title">What we leave out matters as much as what we put in.</h2>
+            </header>
+            <div class="why__grid">
+                <article class="why__card">
+                    <div class="why__card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                    </div>
+                    <h3 class="why__card-title">No Palm Oil</h3>
+                    <p class="why__card-text">Environmental impact aside, palm oil masks flavor and creates a waxy mouthfeel. We let peanuts be peanuts.</p>
+                </article>
+                <article class="why__card">
+                    <div class="why__card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                    </div>
+                    <h3 class="why__card-title">No Refined Sugar</h3>
+                    <p class="why__card-text">White sugar adds sweetness but strips complexity. Dates bring mineral-rich sweetness with character.</p>
+                </article>
+                <article class="why__card">
+                    <div class="why__card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                    </div>
+                    <h3 class="why__card-title">No Emulsifiers</h3>
+                    <p class="why__card-text">Lecithin and mono/diglycerides prevent separation — but they also dull flavor. Natural separation is a sign of honesty.</p>
+                </article>
+                <article class="why__card">
+                    <div class="why__card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                    </div>
+                    <h3 class="why__card-title">No Stabilizers</h3>
+                    <p class="why__card-text">Hydrogenated oils keep texture uniform. We prefer stone-grinding patience over chemical shortcuts.</p>
+                </article>
+                <article class="why__card">
+                    <div class="why__card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                    </div>
+                    <h3 class="why__card-title">No Artificial Flavors</h3>
+                    <p class="why__card-text">"Natural flavor" can mean anything. Our flavor comes from roasting, grinding, and ingredient quality.</p>
+                </article>
+                <article class="why__card">
+                    <div class="why__card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                    </div>
+                    <h3 class="why__card-title">No Preservatives</h3>
+                    <p class="why__card-text">Small batches. Proper sealing. Natural shelf stability from low water activity. No benzoates or sorbates.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Comparison -->
+    <section class="comparison" id="comparison" aria-labelledby="comparisonTitle">
+        <div class="container">
+            <header class="section-header section-header--center">
+                <p class="section__eyebrow">Compare</p>
+                <h2 id="comparisonTitle" class="section__title">Which butter fits your kitchen?</h2>
+            </header>
+            <div class="comparison__table-wrapper">
+                <table class="comparison__table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Regular Peanut Butter</th>
+                            <th scope="col">Supernut Butter</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Base</th>
+                            <td>100% Dry-roasted peanuts</td>
+                            <td>Peanut-forward nut blend</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sweetness</th>
+                            <td>Medjool dates</td>
+                            <td>Medjool dates</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Texture</th>
+                            <td>Smooth, creamy</td>
+                            <td>Creamy with subtle texture</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nut Variety</th>
+                            <td>Single-origin peanuts</td>
+                            <td>Multiple nuts & seeds</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Best For</th>
+                            <td>Toast, baking, smoothies, cooking</td>
+                            <td>Snacking, cheese boards, gourmet use</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Palm Oil</th>
+                            <td class="comparison__check">None</td>
+                            <td class="comparison__check">None</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Refined Sugar</th>
+                            <td class="comparison__check">None</td>
+                            <td class="comparison__check">None</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="comparison__actions">
+                <a href="buy.html?product=regular" class="btn btn--primary magnetic-btn">Request Regular</a>
+                <a href="buy.html?product=supernut" class="btn btn--outline magnetic-btn">Request Supernut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="story" id="story" aria-labelledby="storyTitle">
+        <div class="container">
+            <div class="story__layout">
+                <div class="story__content">
+                    <header class="section-header">
+                        <p class="section__eyebrow">Our Story</p>
+                        <h2 id="storyTitle" class="section__title">Started from a simple question.</h2>
+                    </header>
+                    <div class="story__text">
+                        <p>Why does every peanut butter jar contain ingredients we can't pronounce? Palm oil. Hydrogenated oils. Refined sugar. Emulsifiers. Stabilizers. Preservatives.</p>
+                        <p>We wanted a peanut butter that tasted like peanuts — roasted, rich, alive — sweetened only by the caramel warmth of dates. Nothing to hide. Nothing to apologize for.</p>
+                        <p>NO ADDITIVES (N/A) was born from that refusal to compromise. Small batches. Honest ingredients. A label you can read in three seconds.</p>
+                        <p>This isn't a health claim. It's a taste choice. It's an integrity choice.</p>
+                    </div>
+                </div>
+                <div class="story__visual" aria-hidden="true">
+                    <div class="story__image-wrapper">
+                        <img src="assets/texture.svg" alt="Peanut butter texture close-up" class="story__image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faqTitle">
+        <div class="container">
+            <header class="section-header section-header--center">
+                <p class="section__eyebrow">Questions</p>
+                <h2 id="faqTitle" class="section__title">Common questions, honest answers.</h2>
+            </header>
+            <div class="faq__list" id="faqList">
+                <details class="faq__item">
+                    <summary class="faq__question">How many products do you have?</summary>
+                    <div class="faq__answer">
+                        <p>Two: Regular Peanut Butter and Supernut Butter. Each reflects the same philosophy — no palm oil, no refined sugar, naturally sweetened with dates.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Are the products palm-oil free?</summary>
+                    <div class="faq__answer">
+                        <p>Yes. Both products are made without palm oil. Texture comes from proper roasting and stone grinding.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Do you use refined sugar?</summary>
+                    <div class="faq__answer">
+                        <p>No. Medjool dates provide all the sweetness — along with fiber, minerals, and natural caramel notes.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Do you display prices online?</summary>
+                    <div class="faq__answer">
+                        <p>No. This website is primarily a visiting and product showcase experience. Submit a request to buy and our team will provide availability and pricing information.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">How can I request a product?</summary>
+                    <div class="faq__answer">
+                        <p>Click "Request to Buy" on any product or visit the Request page. You'll specify product, quantity, and contact details. Our team follows up directly.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">How can I contact No Additives?</summary>
+                    <div class="faq__answer">
+                        <p>Email us at <a href="mailto:infonoadditives@gmail.com">infonoadditives@gmail.com</a>. We read every message.</p>
+                    </div>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__question">Can I request multiple jars?</summary>
+                    <div class="faq__answer">
+                        <p>Yes. The request form supports quantity selection from 1 to 5 jars, with a custom option for larger requests.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta" id="cta" aria-labelledby="ctaTitle">
+        <div class="container">
+            <div class="cta__content">
+                <h2 id="ctaTitle" class="cta__title">Ready to taste the difference?</h2>
+                <p class="cta__text">Request your jar of No Additives peanut butter today. Our team will reach out with availability and next steps.</p>
+                <div class="cta__actions">
+                    <a href="buy.html" class="btn btn--light magnetic-btn">Request to Buy</a>
+                    <a href="mailto:infonoadditives@gmail.com" class="btn btn--outline-light magnetic-btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo" aria-label="NO ADDITIVES Home">
+                        <span class="footer__logo-main">NO ADDITIVES</span>
+                        <span class="footer__logo-sub">N/A</span>
+                    </a>
+                    <p class="footer__tagline">Nothing unnecessary. Everything delicious.</p>
+                    <address class="footer__contact">
+                        <a href="mailto:infonoadditives@gmail.com" class="footer__email">infonoadditives@gmail.com</a>
+                    </address>
+                </div>
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Explore</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#philosophy">Our Philosophy</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-column">
+                        <h4 class="footer__nav-title">Support</h4>
+                        <ul>
+                            <li><a href="buy.html">Request to Buy</a></li>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><a href="mailto:infonoadditives@gmail.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© <span id="currentYear"></span> NO ADDITIVES. All rights reserved.</p>
+                <p class="footer__disclaimer">This website is a brand showcase. Product information is for reference only and should be verified on packaging. No medical or health claims are made.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <aside class="chat-widget" id="chatWidget" aria-label="Chat assistant">
+        <button class="chat-widget__toggle magnetic-btn" id="chatToggle" aria-label="Open chat assistant" aria-expanded="false" aria-controls="chatPanel">
+            <svg class="chat-widget__icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <svg class="chat-widget__icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span class="chat-widget__label">Ask N/A</span>
+        </button>
+        <div class="chat-widget__panel" id="chatPanel" role="dialog" aria-label="Chat with No Additives assistant" hidden>
+            <header class="chat-widget__header">
+                <div class="chat-widget__header-info">
+                    <div class="chat-widget__avatar" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="chat-widget__name">N/A Assistant</h3>
+                        <p class="chat-widget__status">Here to help</p>
+                    </div>
+                </div>
+                <button class="chat-widget__close" id="chatClose" aria-label="Close chat">×</button>
+            </header>
+            <div class="chat-widget__messages" id="chatMessages" role="log" aria-live="polite"></div>
+            <div class="chat-widget__quick" id="chatQuick" aria-label="Quick questions"></div>
+            <form class="chat-widget__input-form" id="chatForm" aria-label="Send message">
+                <input type="text" class="chat-widget__input" id="chatInput" placeholder="Ask about products, ingredients, buying..." aria-label="Your question" autocomplete="off">
+                <button type="submit" class="chat-widget__send" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Product Detail Modal -->
+    <dialog class="product-modal" id="productModal" aria-modal="true" aria-labelledby="productModalTitle">
+        <div class="product-modal__overlay" id="productModalOverlay" aria-hidden="true"></div>
+        <div class="product-modal__content" role="document">
+            <button class="product-modal__close" id="productModalClose" aria-label="Close product details">×</button>
+            <div class="product-modal__body" id="productModalBody"></div>
+        </div>
+    </dialog>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
